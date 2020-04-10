@@ -1,8 +1,8 @@
 document = "./examples/bubble_sort.rb"
 
-  def line_length(doc, max)
+  def code_length(doc, max)
     i = 0
-    check = "Length Of The Code Check"
+    check = "Length of the code. Check"
     File.readlines(doc).each do
       i += 1
     end
@@ -12,7 +12,7 @@ document = "./examples/bubble_sort.rb"
 
   def extra_space(doc)
     i = 0
-    check = "Extra Spaces At End Line Check"
+    check = "Extra spaces at the end of the line. Check"
     File.readlines(doc).each do |line|
       i += 1
       spaces_count = line.count(' ') - line.rstrip.count(' ')
@@ -26,7 +26,7 @@ document = "./examples/bubble_sort.rb"
   def empty_line(doc)
     i = 0
     empty_lines = []
-    check = "Extra Blank Lines Check"
+    check = "Extra blank lines. Check"
     File.readlines(doc).each do |line|
       i += 1
       if line.gsub("\n","").length == 0
@@ -41,6 +41,17 @@ document = "./examples/bubble_sort.rb"
     check
   end
 
+  def line_length(doc, max)
+    check = "Length of each line. Check"
+    i = 0
+    File.readlines(doc).each do |line|
+      i += 1
+      if line.to_s.size > max
+        puts "More than #{max} characters per line is not allowed. Line: " + i.to_s
+      end
+    end
+    check
+  end
   # def space_between(doc)
   #   i = 0
   #   warning = []
@@ -54,7 +65,8 @@ document = "./examples/bubble_sort.rb"
   # end
 
 
-puts line_length(document, 1000)
+puts code_length(document, 1000)
 puts extra_space(document)
 puts empty_line(document)
+puts line_length(document, 1000000)
 # puts space_between(document)
