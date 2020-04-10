@@ -10,11 +10,13 @@ end
 
 
 def extra_space(doc)
-  line_with_spaces = []
-  File.readlines(doc).each do
-    line_with_spaces(|line|[/\A */].size).push
+  i = 0
+  File.readlines(doc).each do |line|
+    i += 1
+    if line[/\A */].size > 2
+      return "Indentation shouldn't be more than two spaces in line: " + i.to_s
+    end
   end
-  line_with_spaces
 end
 
 
