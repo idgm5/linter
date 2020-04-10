@@ -52,21 +52,18 @@ document = "./examples/bubble_sort.rb"
     end
     check
   end
-  # def space_between(doc)
-  #   i = 0
-  #   warning = []
-  #   File.readlines(doc).each do |line|
-  #     i += 1
-  #     if line.gsub(/\n\s+/, " ")
-  #       warning.push(i)
-  #     end
-  #   end
-  #   return "Deleted extra between spaces in lines: " + warning.to_i
-  # end
+
+  def space_between(doc)
+    check = "Spaces between objects. Check"
+    i = 0
+    File.write(doc, File.readlines(doc).reject { |line| line.strip.empty? }.join)
+    check
+  end
 
 
 puts code_length(document, 1000)
 puts extra_space(document)
 puts empty_line(document)
 puts line_length(document, 1000000)
+puts space_between(document)
 # puts space_between(document)
