@@ -35,6 +35,7 @@ RSpec.describe Linter do
 		context 'when receive a file' do
 			it 'look for consecutive empty lines' do
 				puts check.empty_line
+				expect(puts check.code_length).to eq(false)
 	      	end
 	  	end
 	end
