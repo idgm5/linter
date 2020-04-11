@@ -4,7 +4,6 @@ directories = Dir[Dir.pwd + "/**/*.rb"]
 
 def inspect_files(directory)
 	directory.each do |file|
-		document = File.basename(file)
 		check = Linter::Check.new(file)
 		puts check.current_file
 		puts "====================================================================="
@@ -12,7 +11,7 @@ def inspect_files(directory)
 		puts check.extra_space
 		puts check.empty_line
 		puts check.line_length
-		# puts space_between(document)
+		# puts space_between
 		puts check.comparison_operator
 		puts check.logical_operator
 		puts "====================================================================="
