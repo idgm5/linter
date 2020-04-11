@@ -7,7 +7,8 @@ RSpec.describe Linter do
 	describe '.code_length' do
 		context 'when receive a file' do
 			it 'compares the amount of lines in the file with the max amount of lines allowed' do
-				puts check.code_length
+				result = check.code_length
+				expect(puts check.code_length).to eq(false)
 	      	end
 	  	end
 	end
@@ -16,6 +17,7 @@ RSpec.describe Linter do
 		context 'when receive a file' do
 			it 'compares the amount of characters in a single line with the max amount of characters allowed' do
 				puts check.line_length
+				expect(puts check.code_length).to eq(false)
 	      	end
 	  	end
 	end
