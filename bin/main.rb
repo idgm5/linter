@@ -1,7 +1,7 @@
 require './lib/lint.rb'
 
 document = "./examples/bubble_sort.rb"
-check = Check.new(document, 1000)
+check = Linter::Check.new(document)
 
 puts check.code_length
 puts check.extra_space
