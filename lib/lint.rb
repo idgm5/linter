@@ -54,9 +54,15 @@ document = "./examples/bubble_sort.rb"
   end
 
   def space_between(doc)
-    check = "Spaces between objects. Check"
+    check = "Deleted spaces between objects. Check"
     i = 0
-    File.write(doc, File.readlines(doc).reject { |line| line.strip.empty? }.join)
+    new_lines = []
+    File.readlines(doc).each do |line|
+      line = line.squeeze(" ")
+      new_lines << line
+    end
+
+    File.open(doc, 'w').write(new_lines.join(""))
     check
   end
 
