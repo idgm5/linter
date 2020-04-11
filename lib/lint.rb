@@ -53,26 +53,32 @@ document = "./examples/bubble_sort.rb"
     check
   end
 
-  # def space_between(doc)
-  #   check = "Deleted spaces between objects. Check"
-  #   i = 0
-  #   new_lines = []
-  #   File.readlines(doc).each do |line|
-  #     line = line.squeeze(" ")
-  #     new_lines << line
-  #   end
-  #
-  #   File.open(doc, 'w').write(new_lines.join(""))
-  #   check
-  # end
+  def space_between(doc)
+    check = "Deleted spaces between objects. Check"
+    i = 0
+    new_lines = []
+    File.readlines(doc).each do |line|
+      line = line.squeeze(" ")
+      new_lines << line
+    end
+  
+    File.open(doc, 'w').write(new_lines.join(""))
+    check
+  end
 
-  def negative_condition(doc)
-    check = "Negative conditions. Check"
+  def equality_operator(doc)
+    check = "Equality operators. Check"
     i = 0
     File.readlines(doc).each do |line|
       i += 1
+      alternative_operator = " "
+      response = "Change operator on line #{i.to_s}, use "
       if line.include? "!="
-        puts "Instead of using != on line #{i.to_s}, use '!' e.g. !foobar"
+        alternative_operator = "'!' instead."
+        puts response + alternative_operator
+      elsif line.include? "=="
+        alternative_operator = "'equal? or include?' instead."
+        puts response + alternative_operator
       end
     end
     check
@@ -82,4 +88,4 @@ puts extra_space(document)
 puts empty_line(document)
 puts line_length(document, 1000000)
 # puts space_between(document)
-puts negative_condition(document)
+puts equality_operator(document)
