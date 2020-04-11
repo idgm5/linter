@@ -66,8 +66,8 @@ document = "./examples/bubble_sort.rb"
     check
   end
 
-  def equality_operator(doc)
-    check = "Equality operators. Check"
+  def comparison_operator(doc)
+    check = "Comparison operators. Check"
     i = 0
     File.readlines(doc).each do |line|
       i += 1
@@ -83,9 +83,10 @@ document = "./examples/bubble_sort.rb"
     end
     check
   end
+
 puts code_length(document, 1000)
 puts extra_space(document)
 puts empty_line(document)
 puts line_length(document, 1000000)
 # puts space_between(document)
-puts equality_operator(document)
+puts comparison_operator(document)
