@@ -1,7 +1,7 @@
 module Linter
   class Parameters
-    def initialize(doc, max = 0)
-      @doc = doc
+    def initialize(file)
+      @doc = file
       @indentation = 2 # Amount of spaces for indentation
       @code_length = 120 # Max length of code allowed in a single rb file
       @line_length = 80 # Max length in characters for a single line
@@ -21,7 +21,7 @@ module Linter
 
     def extra_space
       i = 0
-      check = "Extra spaces at the end of the line. Check"
+      check = "Extra spaces at end of line. Check"
       File.readlines(@doc).each do |line|
         i += 1
         spaces_count = line.count(' ') - line.rstrip.count(' ')
@@ -62,19 +62,6 @@ module Linter
       check
     end
 
-    def space_between
-      check = "Deleted spaces between objects. Check"
-      i = 0
-      new_lines = []
-      File.readlines(@doc).each do |line|
-        line = line.squeeze(" ")
-        new_lines << line
-      end
-    
-      File.open(doc, 'w').write(new_lines.join(""))
-      check
-    end
-
     def comparison_operator
       check = "Comparison operators. Check"
       i = 0
@@ -82,10 +69,10 @@ module Linter
         i += 1
         alternative_operator = " "
         response = "Change operator on line #{i.to_s}, use "
-        if line.include? "!="
+        if line.include? " != "
           alternative_operator = "'!' instead."
           puts response + alternative_operator
-        elsif line.include? "=="
+        elsif line.include? " == "
           alternative_operator = "'equal? or include?' instead."
           puts response + alternative_operator
         end
@@ -109,6 +96,23 @@ module Linter
         end
       end
       check
+    end
+
+    def space_between
+      check = "Deleted spaces between objects. Check"
+      i = 0
+      new_lines = []
+      File.readlines(@doc).each do |line|
+        line = line.squeeze(" ")
+        new_lines << line
+      end
+      File.open(doc, 'w').write(new_lines.join(""))
+      check
+    end
+
+    def current_file
+      name = File.basename(@doc)
+      return "Checking any broken rules in file: " + name
     end
   end
 end
