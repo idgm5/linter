@@ -26,6 +26,7 @@ RSpec.describe Linter do
 		context 'when receive a file' do
 			it 'look for extra spaces at the end of each line' do
 				puts check.extra_space
+				expect(puts check.code_length).to eq(false)
 	      	end
 	  	end
 	end
