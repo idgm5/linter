@@ -84,6 +84,24 @@ document = "./examples/bubble_sort.rb"
     check
   end
 
+  def logical_operator(doc)
+    check = "Logical operators. Check"
+    i = 0
+    File.readlines(doc).each do |line|
+      i += 1
+      alternative_operator = " "
+      response = "Change operator on line #{i.to_s}, use "
+      if line.include? "and"
+        alternative_operator = "'&&' instead."
+        puts response + alternative_operator
+      elsif line.include? "or"
+        alternative_operator = "'||' instead."
+        puts response + alternative_operator
+      end
+    end
+    check
+  end
+
 puts code_length(document, 1000)
 puts extra_space(document)
 puts empty_line(document)
