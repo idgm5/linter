@@ -1,7 +1,15 @@
-document = "./examples/bubble_sort.rb"
+class Check
+  attr_reader :doc, :max
 
-  def code_length(doc, max)
+  def initialize(doc, max = 0)
+    @doc = doc
+    @max = max
+  end
+
+  def code_length
     i = 0
+    doc = @doc
+    max = @max
     check = "Length of the code. Check"
     File.readlines(doc).each do
       i += 1
@@ -10,8 +18,9 @@ document = "./examples/bubble_sort.rb"
     check
   end
 
-  def extra_space(doc)
+  def extra_space
     i = 0
+    doc = @doc
     check = "Extra spaces at the end of the line. Check"
     File.readlines(doc).each do |line|
       i += 1
@@ -23,8 +32,9 @@ document = "./examples/bubble_sort.rb"
     check
   end
 
-  def empty_line(doc)
+  def empty_line
     i = 0
+    doc = @doc
     empty_lines = []
     check = "Extra blank lines. Check"
     File.readlines(doc).each do |line|
@@ -41,9 +51,11 @@ document = "./examples/bubble_sort.rb"
     check
   end
 
-  def line_length(doc, max)
+  def line_length
     check = "Length of each line. Check"
     i = 0
+    doc = @doc
+    max = @max
     File.readlines(doc).each do |line|
       i += 1
       if line.to_s.size > max
@@ -53,9 +65,10 @@ document = "./examples/bubble_sort.rb"
     check
   end
 
-  def space_between(doc)
+  def space_between
     check = "Deleted spaces between objects. Check"
     i = 0
+    doc = @doc
     new_lines = []
     File.readlines(doc).each do |line|
       line = line.squeeze(" ")
@@ -66,9 +79,10 @@ document = "./examples/bubble_sort.rb"
     check
   end
 
-  def comparison_operator(doc)
+  def comparison_operator
     check = "Comparison operators. Check"
     i = 0
+    doc = @doc
     File.readlines(doc).each do |line|
       i += 1
       alternative_operator = " "
@@ -84,9 +98,10 @@ document = "./examples/bubble_sort.rb"
     check
   end
 
-  def logical_operator(doc)
+  def logical_operator
     check = "Logical operators. Check"
     i = 0
+    doc = @doc
     File.readlines(doc).each do |line|
       i += 1
       alternative_operator = " "
@@ -101,10 +116,5 @@ document = "./examples/bubble_sort.rb"
     end
     check
   end
+end
 
-puts code_length(document, 1000)
-puts extra_space(document)
-puts empty_line(document)
-puts line_length(document, 1000000)
-# puts space_between(document)
-puts comparison_operator(document)
