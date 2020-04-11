@@ -1,4 +1,4 @@
-require './lib/lint.rb'
+require './lib/linter.rb'
 
 document = "./examples/bubble_sort.rb"
 check = Linter::Check.new(document)
