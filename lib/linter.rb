@@ -5,7 +5,7 @@ module Linter
     def initialize(file)
       @doc = file
       @indentation = 2 # Amount of spaces for indentation
-      @code_length = 5 # Max length of code allowed in a single rb file
+      @code_length = 120 # Max length of code allowed in a single rb file
       @line_length = 80 # Max length in characters for a single line
     end
   end
@@ -110,22 +110,9 @@ module Linter
       broken_rule
     end
 
-    def space_between
-      broken_rule = false
-      i = 0
-      new_lines = []
-      File.readlines(@doc).each do |line|
-        line = line.squeeze(" ")
-        new_lines << line
-        broken_rule = true
-      end
-      File.open(doc, 'w').write(new_lines.join(""))
-      broken_rule
-    end
-
     def current_file
       name = File.basename(@doc)
-      puts "Checking any broken rules in file: " + name
+      print "Checking any broken rules in file: " + name
     end
   end
 end
