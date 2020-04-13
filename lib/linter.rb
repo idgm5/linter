@@ -3,7 +3,6 @@
 # rubocop:disable Style/DocumentationMethod
 # rubocop:disable Style/InlineComment
 # rubocop:disable Style/MissingElse
-# rubocop:disable Rails/Output
 # rubocop:disable Style/MethodCallWithArgsParentheses
 
 module Linter
@@ -128,5 +127,4 @@ end
 # rubocop:enable Style/DocumentationMethod
 # rubocop:enable Style/InlineComment
 # rubocop:enable Style/MissingElse
-# rubocop:enable Rails/Output
 # rubocop:enable Style/MethodCallWithArgsParentheses
