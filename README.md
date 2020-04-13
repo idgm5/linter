@@ -1,5 +1,13 @@
 # A style Linter for Ruby
-> This a captsone project for the Microverse Program, all the requirements have been included.
+> I created a Linter that looks for each .rb files inside of a directory (including sub-directories) and suggest better alternatives for your Ruby code.
+
+# Rules on this Linter:
+- The number of lines in each file shouldn't be more than 140.
+- The amount of characters per line is limited to 100.
+- There should be no extra spaces at the end of each line.
+- No more than one empty line after each method.
+- Best alternatives for comparison operators.
+- Best alternatives for logical operators.
 
 ## Language
 - Ruby
