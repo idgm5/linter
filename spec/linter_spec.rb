@@ -1,4 +1,8 @@
+# rubocop:disable Style/Copyright
+# rubocop:disable Style/MethodCallWithArgsParentheses
+
 # spec :linter_spec.rb
+
 require './lib/linter.rb'
 
 document = './examples/bubble_sort.rb'
@@ -61,3 +65,6 @@ RSpec.describe Linter::Check do
     end
   end
 end
+
+# rubocop:enable Style/Copyright
+# rubocop:enable Style/MethodCallWithArgsParentheses

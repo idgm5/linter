@@ -1,4 +1,8 @@
+# rubocop:disable Style/Copyright
 # rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Style/DocumentationMethod
+# rubocop:disable Style/MethodCallWithArgsParentheses
+
 require './lib/linter.rb'
 
 directories = Dir[Dir.pwd + '/**/*.rb']
@@ -19,4 +23,8 @@ def inspect_files(directory)
 end
 
 puts inspect_files(directories)
+
+# rubocop:enable Style/Copyright
 # rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Style/DocumentationMethod
+# rubocop:enable Style/MethodCallWithArgsParentheses

@@ -1,3 +1,8 @@
+# rubocop:disable Style/Copyright
+# rubocop:disable Style/DocumentationMethod
+# rubocop:disable Style/MissingElse
+# rubocop:disable Style/MethodCallWithArgsParentheses
+
 def bubble_sort(array)
   array.length.times do
     sorted = true
@@ -26,9 +31,17 @@ def bubble_sort_by(array)
   array
 end
 
-string_array_sort = bubble_sort_by(%w[hi hello hey]) do |left, right|
-  left.length - right.length
-end
+string_array_sort =
+  bubble_sort_by(%w[hi hello hey]) do |left, right|
+    left.length - right.length
+  end
 
 print string_array_sort
 print bubble_sort([0, 5, 7, 2])
+
+# rubocop:enable Style/Copyright
+# rubocop:enable Style/DocumentationMethod
+# rubocop:enable Style/InlineComment
+# rubocop:enable Style/MissingElse
+# rubocop:enable Rails/Output
+# rubocop:enable Style/MethodCallWithArgsParentheses
