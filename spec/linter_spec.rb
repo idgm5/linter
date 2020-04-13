@@ -43,11 +43,11 @@ RSpec.describe Linter::Check do
 
   describe '.comparison_operator' do
     context 'when receive a file' do
-      it 'look for negative operator and returns better alternative' do
+      it 'look for negative operator, returns better alternative' do
         expect(check.comparison_operator).to eq(false)
       end
 
-      it 'look for equal operator and returns better alternative' do
+      it 'look for equal operator, returns better alternative' do
         expect(check.comparison_operator).to eq(false)
       end
     end
@@ -55,11 +55,11 @@ RSpec.describe Linter::Check do
 
   describe '.logical_operator' do
     context 'when receive a file' do
-      it 'look for AND operator and returns better alternative' do
+      it 'look for, operator, returns better alternative' do
         expect(check.logical_operator).to eq(false)
       end
 
-      it 'look for OR operator and returns better alternative' do
+      it 'look for OR operator, returns better alternative' do
         expect(check.logical_operator).to eq(false)
       end
     end

@@ -12,8 +12,8 @@ module Linter
     def initialize(file)
       @doc = file
       @indentation = 2 # Amount of spaces for indentation
-      @code_length = 120 # Max length of code allowed in a single rb file
-      @line_length = 80 # Max length in characters for a single line
+      @code_length = 140 # Max length of code allowed in a single rb file
+      @line_length = 100 # Max length in characters for a single line
     end
   end
 
@@ -54,7 +54,7 @@ module Linter
         empty_lines.push(i) if line.delete("\n").length.zero?
       end
       (empty_lines.length - 1).times do |x|
-        if empty_lines[x + 1] - empty_lines[x] == 1
+        if (empty_lines[x + 1] - empty_lines[x]).equal? 1
           broken_rule = true
           puts 'You have more than one empty line: ' + empty_lines[x].to_s
         end
