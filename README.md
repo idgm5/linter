@@ -1,1 +1,40 @@
-# linter
+# Linter
+> A style Linter for ruby
+
+## Language
+- Ruby
+
+## Getting started
+In order to use this linter:
+
+1. You need to have ruby environment installed. [Click here for instructions](https://www.ruby-lang.org/en/documentation/installation/)
+2. Clone this repository `https://github.com/ghamtre/linter.git`
+3. Inside linter directory run `ruby ./bin/main.rb`
+
+## Instructions to change parameters
+- Go to `/lib/` directory
+- Open `/linter.rb/`
+- Inside of class `Parameters` you change the default values of indentation, max characters allows per line, etc.
+
+### How to make tests for this linter?
+- You can run the rspec testing directly from linter directory.
+![image](https://i.imgur.com/fv3U5Zx.png)
+- To modify or add more tests to the project, you can edit ```linter_spec.rb``` file inside of the spec directory.
+- Any new changes to this file must be documented in a pull request before merging.
+
+## Author
+👤 **Isaac Gonzalez**
+
+- Github: [@ghamtre](https://github.com/ghamtre)
+- Twitter: [@idgm5](https://twitter.com/idgm5)
+- Linkedin: [Isaac Gonzalez](https://www.linkedin.com/in/isaacmunguia)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to submit a new suggestion > [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!

@@ -16,7 +16,7 @@ RSpec.describe Linter::Check do
   describe '.line_length' do
     context 'when receive a file' do
       it 'compares the amount of characters in a single line with the max amount of characters allowed' do
-        expect(check.line_length).to eq(true)
+        expect(check.line_length).to eq(false)
       end
     end
   end
@@ -24,7 +24,7 @@ RSpec.describe Linter::Check do
   describe '.extra_space' do
     context 'when receive a file' do
       it 'look for extra spaces at the end of each line' do
-        expect(check.extra_space).to eq(true)
+        expect(check.extra_space).to eq(false)
       end
     end
   end
