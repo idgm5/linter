@@ -7,7 +7,7 @@ def bubble_sort(array)
         sorted = false
       end
     end
-    break if sorted
+    break if sorted                                                                         
   end
   array
 end
