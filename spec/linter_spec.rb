@@ -1,13 +1,14 @@
-require '../lib/linter.rb'
+# spec :linter_spec.rb
+require './lib/linter.rb'
 
-document = "../examples/bubble_sort.rb"
+document = "./examples/bubble_sort.rb"
 check = Linter::Check.new(document)
 
-RSpec.describe Linter do
+RSpec.describe Linter::Check do
 	describe '.code_length' do
 		context 'when receive a file' do
 					it 'compares the amount of lines in the file with the max amount of lines allowed' do
-						expect(check.code_length).to eq(true)
+						expect(check.code_length).to eq(false)
 	      	end
 	  	end
 	end
