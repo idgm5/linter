@@ -1,5 +1,5 @@
-# Linter
-> A style Linter for ruby
+# A style Linter for Ruby
+> This a captsone project for the Microverse Program, all the requirements have been included.
 
 ## Language
 - Ruby
