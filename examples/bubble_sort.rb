@@ -41,7 +41,5 @@ print bubble_sort([0, 5, 7, 2])
 
 # rubocop:enable Style/Copyright
 # rubocop:enable Style/DocumentationMethod
-# rubocop:enable Style/InlineComment
 # rubocop:enable Style/MissingElse
-# rubocop:enable Rails/Output
 # rubocop:enable Style/MethodCallWithArgsParentheses

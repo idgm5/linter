@@ -125,7 +125,6 @@ end
 
 # rubocop:enable Style/Copyright
 # rubocop:enable Lint/UselessAssignment
-# rubocop:enable Style/Copyright
 # rubocop:enable Style/DocumentationMethod
 # rubocop:enable Style/InlineComment
 # rubocop:enable Style/MissingElse
