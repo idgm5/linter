@@ -14,7 +14,8 @@ In order to use this linter:
 ## Instructions to change parameters
 - Go to `/lib/` directory
 - Open `/linter.rb/`
-- Inside of class `Parameters` you change the default values of indentation, max characters allows per line, etc.
+- Inside of class `Parameters` you change the default values of indentation, max characters allowed per line, etc.
+![image](https://i.imgur.com/M8GShls.png)
 
 ### How to make tests for this linter?
 - You can run the rspec testing directly from linter directory.

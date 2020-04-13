@@ -1,7 +1,7 @@
 # rubocop:disable Lint/UselessAssignment
 module Linter
   class Parameters
-    attr_reader :indentation, :code_length, :line_length, :i
+    attr_reader :indentation, :code_length, :line_length
 
     def initialize(file)
       @doc = file
