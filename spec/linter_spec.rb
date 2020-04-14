@@ -57,18 +57,18 @@ RSpec.describe Linter::Check do
     end
   end
 
-  describe '.logical_AND_operator' do
+  describe '.logical_and_operator' do
     context 'when receive a file' do
       it 'look for AND operator, returns better alternative' do
-        expect(check.logical_AND_operator).to eq(false)
+        expect(check.logical_and_operator).to eq(false)
       end
     end
   end
 
-  describe '.logical_OR_operator' do
+  describe '.logical_or_operator' do
     context 'when receive a file' do
       it 'look for OR operator, returns better alternative' do
-        expect(check.logical_OR_operator).to eq(false)
+        expect(check.logical_or_operator).to eq(false)
       end
     end
   end

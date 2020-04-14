@@ -1,9 +1,9 @@
 # rubocop:disable Style/Copyright
 # rubocop:disable Lint/UselessAssignment
 # rubocop:disable Style/DocumentationMethod
-# rubocop:disable Style/InlineComment
 # rubocop:disable Style/MissingElse
 # rubocop:disable Style/MethodCallWithArgsParentheses
+# rubocop:disable Style/Next
 
 require_relative 'parameters.rb'
 
@@ -98,7 +98,7 @@ module Linter
       broken_rule
     end
 
-    def logical_AND_operator
+    def logical_and_operator
       broken_rule = false
       i = 0
       File.readlines(@doc).each do |line|
@@ -114,7 +114,7 @@ module Linter
       broken_rule
     end
 
-    def logical_OR_operator
+    def logical_or_operator
       broken_rule = false
       i = 0
       File.readlines(@doc).each do |line|
@@ -140,6 +140,6 @@ end
 # rubocop:enable Style/Copyright
 # rubocop:enable Lint/UselessAssignment
 # rubocop:enable Style/DocumentationMethod
-# rubocop:enable Style/InlineComment
 # rubocop:enable Style/MissingElse
 # rubocop:enable Style/MethodCallWithArgsParentheses
+# rubocop:enable Style/Next
