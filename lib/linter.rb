@@ -5,16 +5,9 @@
 # rubocop:disable Style/MissingElse
 # rubocop:disable Style/MethodCallWithArgsParentheses
 
-module Linter
-  class Parameters
-    def initialize(file)
-      @doc = file
-      @indentation = 2 # Amount of spaces for indentation
-      @code_length = 140 # Max length of code allowed in a single rb file
-      @line_length = 100 # Max length in characters for a single line
-    end
-  end
+require_relative 'parameters.rb'
 
+module Linter
   class Check < Parameters
     def code_length
       i = 0
