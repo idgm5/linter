@@ -5,7 +5,6 @@
 # rubocop:disable Metrics/PerceivedComplexity
 
 require_relative '../lib/linter.rb'
-require_relative '../lib/parameters.rb'
 
 directories = Dir[Dir.pwd + '/**/*.rb']
 
