@@ -21,7 +21,7 @@ In order to use this linter:
 
 ## Instructions to change parameters
 - Go to `/lib/` directory
-- Open `/linter.rb`
+- Open `/parameter.rb`
 - Inside of class `Parameters` you change the default values of indentation, max characters allowed per line, etc.
 ![image](https://i.imgur.com/M8GShls.png)
 
