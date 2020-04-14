@@ -80,11 +80,7 @@ module Linter
         i += 1
         alternative_operator = ' '
         response = "Change operator on line #{i}, use "
-        if line.include? ' != '
-          broken_rule = true
-          alternative_operator = "'!' instead."
-          puts response + alternative_operator
-        elsif line.include? ' == '
+        if line.include? ' == '
           broken_rule = true
           alternative_operator = "'equal? or include?' instead."
           puts response + alternative_operator
@@ -93,7 +89,23 @@ module Linter
       broken_rule
     end
 
-    def logical_operator
+    def negative_operator
+      broken_rule = false
+      i = 0
+      File.readlines(@doc).each do |line|
+        i += 1
+        alternative_operator = ' '
+        response = "Change operator on line #{i}, use "
+        if line.include? ' != '
+          broken_rule = true
+          alternative_operator = "'!' instead."
+          puts response + alternative_operator
+        end
+      end
+      broken_rule
+    end
+
+    def logical_AND_operator
       broken_rule = false
       i = 0
       File.readlines(@doc).each do |line|
@@ -104,7 +116,19 @@ module Linter
           broken_rule = true
           alternative_operator = "'&&' instead."
           puts response + alternative_operator
-        elsif line.include? ' or '
+        end
+      end
+      broken_rule
+    end
+
+    def logical_OR_operator
+      broken_rule = false
+      i = 0
+      File.readlines(@doc).each do |line|
+        i += 1
+        alternative_operator = ' '
+        response = "Change operator on line #{i}, use "
+        if line.include? ' or '
           broken_rule = true
           alternative_operator = "'||' instead."
           puts response + alternative_operator

@@ -17,7 +17,9 @@ def inspect_files(directory)
     puts 'Extra blank lines. Check' if check.empty_line.equal? false
     puts 'Length of each line. Check' if check.line_length.equal? false
     puts 'Comparison operators. Check' if check.comparison_operator.equal? false
-    puts 'Logical operators. Check' if check.logical_operator.equal? false
+    puts 'Negative operators. Check' if check.negative_operator.equal? false
+    puts 'Logical (&&) operators. Check' if check.logical_AND_operator.equal? false
+    puts 'Logical (||) operators. Check' if check.logical_OR_operator.equal? false
     puts '====================================================================='
   end
 end
