@@ -7,8 +7,6 @@
 
 module Linter
   class Parameters
-    attr_reader :indentation, :code_length, :line_length
-
     def initialize(file)
       @doc = file
       @indentation = 2 # Amount of spaces for indentation

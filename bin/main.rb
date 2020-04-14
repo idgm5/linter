@@ -22,7 +22,7 @@ def inspect_files(directory)
   end
 end
 
-puts inspect_files(directories)
+inspect_files(directories)
 
 # rubocop:enable Style/Copyright
 # rubocop:enable Metrics/CyclomaticComplexity
