@@ -34,7 +34,7 @@ In order to use this linter:
 ## Author
 👤 **Isaac Gonzalez**
 
-- Github: [@ghamtre](https://github.com/ghamtre)
+- Github: [@idgm5](https://github.com/idgm5)
 - Twitter: [@idgm5](https://twitter.com/idgm5)
 - Linkedin: [Isaac Gonzalez](https://www.linkedin.com/in/isaacmunguia)
 
